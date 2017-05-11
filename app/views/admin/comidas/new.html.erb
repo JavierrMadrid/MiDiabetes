@@ -1,0 +1,8 @@
+<%= form_for :comida, url: admin_comidas_path do |f| %>
+  Comida: <%= f.text_field :nombre %><br />
+  Peso: <%= f.text_field :peso %><br />
+  Hidratos por ración: <%= f.text_field :hidratosxracion %><br />
+  Raciones: <%= f.text_field :raciones %><br />
+  Ingredientes: <%= f.text_area :ingredientes %><br />
+  <%= f.submit %>
+<% end %>

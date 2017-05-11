@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.5
+  web:
+    build: .
+    command: bundle exec rails s
+    volumes:
+      - .:/app
+    volumes_from:
+      - bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      - BUNDLE_PATH=/bundle
+      - RAILS_ENV=development
+  bundle:
+    image: busybox
+    command: echo "OK"
+    volumes:
+      - /bundle

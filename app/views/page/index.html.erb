@@ -1,3 +1,14 @@
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <style>
+      .mySlides {display:none;}
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
   <body>
     <div class="page">
       <!--
@@ -36,19 +47,15 @@
       ========================================================
       -->
       <main>
-        <section class="camera_container">
-          <div>
-             <img src=<%=image_path("simbolo.jpg")%> alt="">
-              <div class="camera_caption fadeIn">
-                <div class="container">
-                  <div class="row">
-                    <div class="preffix_6 grid_6">Lleva un control de tu glucosa día a día</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+         <section class="camera_container">
+          <div class="w3-content w3-section" style="max-width:5000px">
+            <img class="mySlides" src=<%=image_path("simbolo.jpg")%> style="width:100%">
+            <img class="mySlides" src=<%=image_path("alimentos.jpg")%> style="width:100%">
+            <img class="mySlides" src=<%=image_path("pdf.jpg")%> style="width:100%">
           </div>
         </section>
+
+        <section>
         <section>
           <div class="container banner_wr">
             <ul class="banner">
@@ -77,21 +84,20 @@
         </section>
      
           <div class="container hr">
-          
           </div>
 
         <section class="well1">
           <div class="container">
             <div class="row">
-              <div class="grid_4">
+              <div class="col-sm-4">
                 <h2>Sobre mi</h2><img src=<%=image_path("yo.png")%> alt="">
                 <p>¡Hola! Yo soy Javier Madrid Alba, tengo 23 años, y soy estudiante de la Escuela Superior de Informatica de Ciudad Real, en la UCLM. He cursado la intensificación de Tecnologías de la Información y este es mi Trabajo de Fin de Grado. Consiste en un sistema mediante el cual poder facilitar el seguimiento y el auto-control del paciente diabetico, atendiendo a sus niveles de glucosa y la dieta seguida. Si quieres saber más sobre mi y sobre el proyecto, pincha en el botón que aparece abajo.</p><a href="#" class="btn">Leer más</a>
               </div>
-              <div class="grid_4">
+              <div class="col-sm-4">
                 <img src=<%=image_path("imagenlogin.png")%> alt="">
               </div>
 
-              <div class="grid_4">
+              <div class="col-sm-4">
             <ul class="row product-list">
               <li class="grid_6">
                 <br/><div class="box wow fadeInRight">
@@ -120,7 +126,7 @@
                   </div>
                   <div class="box_cnt__no-flow">
                     <h3><a href="#">Asistente Web</a></h3>
-                    <p>Mediante el asistente web podrás introducir, editar o eliminar comidas según tus necesidades. ¡Pruebalo!</p>
+                    <p>Mediante el asistente web podrás introducir, editar o eliminar comidas según tus necesidades. ¡Pincha aqui para acceder  !</p>
                   </div>
                 </div>
                 <hr>
@@ -188,5 +194,22 @@
         </section>
       </footer>
     </div>
+
+    <script>
+      var myIndex = 0;
+      carousel();
+
+      function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 5000); // Change image every 2 seconds
+      }
+    </script>
   </body>
 </html>

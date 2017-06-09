@@ -3,13 +3,6 @@
 =========================================================*/
 .camera_container {
   position: relative;
-  padding-bottom: 10%;
-}
-
-@media (max-width: 1134.17722px) {
-  .camera_container {
-    padding-bottom: 350px;
-  }
 }
 .camera_wrap {
   display: none;

@@ -11,6 +11,8 @@ class Admin::ComidasController < AdminController
   def edit
     @comida=Comida.find(params[:id])
   end
+  def delete
+  end
   def update
     Comida.find(params[:id]).update(comida_params)
     redirect_to admin_comidas_path

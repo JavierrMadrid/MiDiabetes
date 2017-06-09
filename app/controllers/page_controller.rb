@@ -7,7 +7,4 @@ class PageController < ApplicationController
   end
   def contact
   end
-  def dbAdmin
-    @comidas=Comida.all
-  end
  end

@@ -31,7 +31,10 @@
                 </li>
                 <li><a href="/contact">Contacto</a>
                 </li>
-                <li><a href="/admin/comidas/index">Asistente de Comidas</a>
+                <li>
+                <%= link_to admin_comidas_path do %>
+            <button type="button" style="background-color:rgba(0,0,0,0,0.5); color: white;">ASISTENTE DE COMIDAS</button>
+            <%end%>
                </li>
               </ul>
             </nav>
@@ -44,14 +47,13 @@
       ========================================================
       -->
       <main>
-         <section class="camera_container">
-          <div class="w3-content w3-section" style="max-width:4200px">
+         <section class="container banner_wr2">
+          <div class="w3-content w3-section" style="width:100%; height:100%">
             <img class="mySlides" src=<%=image_path("simbolo.jpg")%> style="width:100%">
             <img class="mySlides" src=<%=image_path("alimentos.jpg")%> style="width:100%">
             <img class="mySlides" src=<%=image_path("pdf.jpg")%> style="width:100%">
           </div>
         </section>
-
         <section>
         <section>
           <div class="container banner_wr">

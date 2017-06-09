@@ -418,6 +418,11 @@ p + .btn_wr {
   min-height: 308px;
 }
 
+.banner_wr2 {
+  position: relative;
+  min-height: 450px;
+}
+
 .banner {
   position: absolute;
   left: 0;

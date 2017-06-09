@@ -59,6 +59,7 @@
     border-radius: 5px;
     margin-bottom: 25px;
     margin-top: 10px;
+    margin-right: 180px;
     cursor: pointer;
     font-style: 
 }
@@ -162,7 +163,7 @@
                  <%= link_to(edit_admin_comida_path(id: comida.id)) do %>
                   <i class="fa fa-pencil"></i>
                  <% end %>
-                 <%= link_to(admin_comida_path(id: comida.id),
+                 <%= button_to(admin_comida_path(id: comida.id),
                  data: { confirm: '¿Estás seguro?' }, method: :delete) do %>
                   <i class="fa fa-trash"></i>
                  <% end %>

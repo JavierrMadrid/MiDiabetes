@@ -5,9 +5,6 @@
     <style>
       .mySlides {display:none;}
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="page">
@@ -28,14 +25,14 @@
               <ul data-type="navbar" class="sf-menu">
                 <li class="active"><a href="./">Inicio</a>
                 </li>
-                <li><a href="index-1.html">Sobre el Poyecto</a>
+                 <li><a href="/aboutMe">Sobre el Poyecto</a>
                 </li>
-                <li><a href="index-2.html">Servicios</a>
+                <li><a href="/services">Servicios</a>
                 </li>
-                <li><a href="index-3.html">Contacto</a>
+                <li><a href="/contact">Contacto</a>
                 </li>
-                <li><a href="index-4.html">Asistente de BBDD</a>
-                </li>
+                <li><a href="/admin/comidas/index">Asistente de Comidas</a>
+               </li>
               </ul>
             </nav>
           </div>
@@ -48,7 +45,7 @@
       -->
       <main>
          <section class="camera_container">
-          <div class="w3-content w3-section" style="max-width:5000px">
+          <div class="w3-content w3-section" style="max-width:4200px">
             <img class="mySlides" src=<%=image_path("simbolo.jpg")%> style="width:100%">
             <img class="mySlides" src=<%=image_path("alimentos.jpg")%> style="width:100%">
             <img class="mySlides" src=<%=image_path("pdf.jpg")%> style="width:100%">
@@ -89,17 +86,17 @@
         <section class="well1">
           <div class="container">
             <div class="row">
-              <div class="col-sm-4">
+              <div class="grid_4">
                 <h2>Sobre mi</h2><img src=<%=image_path("yo.png")%> alt="">
                 <p>¡Hola! Yo soy Javier Madrid Alba, tengo 23 años, y soy estudiante de la Escuela Superior de Informatica de Ciudad Real, en la UCLM. He cursado la intensificación de Tecnologías de la Información y este es mi Trabajo de Fin de Grado. Consiste en un sistema mediante el cual poder facilitar el seguimiento y el auto-control del paciente diabetico, atendiendo a sus niveles de glucosa y la dieta seguida. Si quieres saber más sobre mi y sobre el proyecto, pincha en el botón que aparece abajo.</p><a href="#" class="btn">Leer más</a>
               </div>
-              <div class="col-sm-4">
+              <div class="grid_4">
                 <img src=<%=image_path("imagenlogin.png")%> alt="">
               </div>
 
-              <div class="col-sm-4">
+              <div class="grid_4">
             <ul class="row product-list">
-              <li class="grid_6">
+              <li class="grid_4">
                 <br/><div class="box wow fadeInRight">
                   <div class="box_aside">
                     <div class="icon fa-thumbs-o-up"></div>
@@ -126,7 +123,7 @@
                   </div>
                   <div class="box_cnt__no-flow">
                     <h3><a href="#">Asistente Web</a></h3>
-                    <p>Mediante el asistente web podrás introducir, editar o eliminar comidas según tus necesidades. ¡Pincha aqui para acceder  !</p>
+                    <p>Mediante el asistente web podrás introducir, editar o eliminar comidas según tus necesidades. ¡Pruébalo!</p>
                   </div>
                 </div>
                 <hr>

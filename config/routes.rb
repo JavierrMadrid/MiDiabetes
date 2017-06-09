@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'page#index'
+  get 'index', to: 'page#index'
   get '/aboutMe', to: 'page#aboutMe'
+  get '/services', to: 'page#services'
+  get '/contact', to: 'page#contact'
+
   namespace :admin, defaults: {format: :html} do
     resources :comidas
   end

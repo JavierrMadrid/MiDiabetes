@@ -6,10 +6,13 @@ development:
   username: postgres
   timeout: 5000
   host: "db"
-production:
+default: &default
   adapter: postgresql
-  encoding: unicode
-  database: posgresql_production
   pool: 5
-  username: postgres
   timeout: 5000
+
+
+production:
+  «: *default
+  database: posgresql_production
+  username: midiabetes

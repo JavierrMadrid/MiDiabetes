@@ -10,9 +10,9 @@ default: &default
   adapter: postgresql
   pool: 5
   timeout: 5000
-
-
 production:
-  «: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
   database: posgresql_production
   username: midiabetes

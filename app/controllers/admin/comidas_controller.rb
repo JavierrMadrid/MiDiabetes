@@ -2,12 +2,12 @@ class Admin::ComidasController < AdminController
   before_action :authenticate_user!
 
   def index
-    @comidas=Comida.all
+    @comidas=current_user.comidas
   end
   def new
   end
   def create
-    Comida.create(comida_params)
+    current_user.comidas.create(comida_params)
     redirect_to admin_comidas_path
   end
   def edit

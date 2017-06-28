@@ -31,7 +31,11 @@
                 </li>
                 <li><a href="/contact">Contacto</a>
                 </li>
-                <li><a href="/dbAdmin">Asistente de Comidas</a>
+                <li>
+                <%= link_to admin_comidas_path do %>
+            <button type="button" style="background-color:rgba(0,0,0,0,0.5); color: white;">ASISTENTE DE COMIDAS</button>
+            <%end%>
+
                 </li>
               </ul>
             </nav>

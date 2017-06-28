@@ -1,4 +1,6 @@
 class Admin::ComidasController < AdminController
+  before_action :authenticate_user!
+
   def index
     @comidas=Comida.all
   end

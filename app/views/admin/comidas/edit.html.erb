@@ -1,8 +1,170 @@
-<%= form_for @comida, url: admin_comida_path(@comida) do |f| %>
-  Comida: <%= f.text_field :nombre %><br />
-  Peso: <%= f.text_field :peso %><br />
-  Hidratos por ración: <%= f.text_field :hidratosxracion %><br />
-  Raciones: <%= f.text_field :raciones %><br />
-  Ingredientes: <%= f.text_area :ingredientes %><br />
-  <%= f.submit %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>MiDiabetes - Comidas</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/startmin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+    .container-fluid {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    }   
+
+    table#t01 tr:nth-child(even) {
+        background-color:#d9edf7;
+    }
+    table#t01 tr:nth-child(odd) {
+    background-color:#fff;
+    }
+    label {
+    color: #3eb3e4;
+    font-size: 20px;
+    }
+    </style>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">MiDiabetes</a>
+        </div>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- Top Navigation: Left Menu -->
+        <ul class="nav navbar-nav navbar-left navbar-top-links">
+            <li><a href="#"><i class="fa fa-home fa-fw"></i>Aplicacion Web</a></li>
+        </ul>
+
+        <!-- Top Navigation: Right Menu -->
+        <ul class="nav navbar-right navbar-top-links">
+            <li class="dropdown navbar-inverse">
+            </li>
+        </ul>
+
+        <!-- Sidebar -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Base de datos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <%= form_for @comida, url: admin_comida_path(@comida), html: {class: "form-horizontal" } do |f| %>
+                    <fieldset>
+                        <br/><br/><br/>
+                         <div class="col-md-7 col-md-offset-4">
+                              <img src=<img src=<%=image_path("comidaoalimento.png")%>" alt="">
+                            </div>
+                        <%=f.label :nombre, "Introduzca el nombre del alimento o comida que desea añadir:", class: "col-md-offset-2"%>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                            <div class="col-md-8 col-md-offset-2">
+                                <%= f.text_field :nombre, placeholder: "Ejemplo: Macarrones, Paella, Judias verdes...", class: "form-control"%>
+                            </div>
+                        </div>
+                         <%=f.label :peso, "¿Qué cantidad quiere añadir? (Expresada en gramos):", class: "col-md-offset-2"%>
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-2">
+                                <%= f.text_field :peso, placeholder: "Ejemplo: 50 (gramos), 110 (gramos)...", class: "form-control"%>
+                            </div>
+                        </div>
+                        <%=f.label :raciones, "¿A cuántas raciones equivalen la cantidad del alimento o comida añadida?:", class: "col-md-offset-2"%>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></i></span>
+                            <div class="col-md-8 col-md-offset-2">
+                                <%= f.text_field :raciones, placeholder: "Ejemplo: 3.5 (raciones), 2 (raciones)", class: "form-control"%>
+                            </div>
+                        </div>
+                        <%=f.label :hidratosxracion, "¿Cual es la equivalencia en hidratos del número de raciones introducido?", class: "col-md-offset-2"%>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8 col-md-offset-2">
+                                <%= f.text_field :hidratosxracion, placeholder: "Ejemplo: 20 (gramos), 12.8 (gramos)...", class: "form-control"%>
+                            </div>
+                        </div>
+                        <%=f.label :ingredientes, "Introduzca, si lo desea, los ingredientes que componen el alimento:", class: "col-md-offset-2"%>
+                        <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"></span>
+                            <div class="col-md-8 col-md-offset-2">
+                                <%= f.text_area :ingredientes, placeholder: "Ejemplo: Si la comida introducida es, por ejemplo, macarrones: macarrones, tomate frito, carne picada, queso rayado...", class: "form-control"%>
+                            </div>
+                        </div>
+                        <span class="col-md-1 col-md-offset-4"><%= link_to("Cancelar", admin_comidas_path(), class: "btn btn-primary btn-lg")%></span>
+                            <div class="col-md-4 col-md-offset-1">
+                                 <button type="submit" class="btn btn-primary btn-lg">&nbsp&nbspAñadir&nbsp&nbsp</button>
+                            </div>
+                          <br/><br/>
+                    </div>
+                    </fieldset>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="js/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/startmin.js"></script>
+
+</body>
+</html>

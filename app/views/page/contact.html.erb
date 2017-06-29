@@ -27,7 +27,6 @@
                 </li>
                 <li><a href="/aboutMe">Sobre el Poyecto</a>
                 </li>
-                <li><a href="/services">Servicios</a>
                 </li>
                 <li class="active"><a href="/contact">Contacto</a>
                 </li>
@@ -49,16 +48,28 @@
       -->
       <main>
         <section class="well1">
-        
-        </section>
-     
-          <div class="container hr">
-          
-          </div>
-
-        <section class="well1">
           <div class="container">
-           
+            <h2>Contacto</h2>
+            <form class="mailform off2">
+              <input type="hidden" name="form-type" value="contact">
+              <fieldset class="row">
+                <label class="grid_4">
+                  <input type="text" name="name" placeholder="Nombre:" data-constraints="@LettersOnly @NotEmpty">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="phone" placeholder="Telefono:" data-constraints="@Phone">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="email" placeholder="Email:" data-constraints="@Email @NotEmpty">
+                </label>
+                <label class="grid_12">
+                  <textarea name="message" placeholder="Mensaje:" data-constraints="@NotEmpty"></textarea>
+                </label>
+                <div class="mfControls grid_4">
+                  <button type="submit" class="btn">Enviar mensaje</button>
+                </div>
+              </fieldset>
+            </form>
           </div>
         </section>
       </main>
@@ -95,27 +106,7 @@
                   <div class="box_cnt__no-flow"><a>+34 619 359 144</a></div>
                 </div>
               </li>
-              <li class="grid_4">
-                <div class="box">
-                  <div class="box_aside">
-                    <div class="icon2 fa-facebook"></div>
-                  </div>
-                  <div class="box_cnt__no-flow"><a href="#">Follow on facebook</a></div>
-                </div>
-                <div class="box">
-                  <div class="box_aside">
-                    <div class="icon2 fa-twitter"></div>
-                  </div>
-                  <div class="box_cnt__no-flow"><a href="#">Follow on Twitter</a></div>
-                </div>
-              </li>
             </ul>
-          </div>
-        </section>
-        <section>
-          <div class="container">
-            <div class="copyright">Business Company © <span id="copyright-year"></span>.&nbsp;&nbsp;<a href="index-5.html">Privacy Policy</a>More Business Website Templates at <a rel="nofollow" href="http://www.templatemonster.com/category/business-web-templates/" target="_blank">TemplateMonster.com</a>
-            </div>
           </div>
         </section>
       </footer>
